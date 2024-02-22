@@ -1,1 +1,126 @@
+//HelloWorld
+namespace HelloWorld
+{
+    class Hello
+         static void Main (string[] arg)
+    {
+        system.console.writeline("HelloWorld!");
+    }
+}
+/////////////////////////////////////////////////////////////////////////////// 
+//Sum of the Number
+    public class Program
+    {
+         static void Main(string[] args)
+        {
+            Console.Write("First Number : ");
+            int FirstNumner = int.Parse(Console.ReadLine());
+            Console.Write("Second Number :");
+            int SecondNumner = int.Parse(Console.ReadLine());
+            int sum = FirstNumner - SecondNumner;
+            Console.WriteLine("Sum of the Number :" + sum);
+        }
+    }
+///////////////////////////////////////////////////////////////////////////////
+/// Largest Number
+        static void Main(string[] args)
+        {
+            Console.Write("Enter the firstnumber : ");
+            int firstnumber = int.Parse(Console.ReadLine());
 
+            Console.Write("Enter the secondnumber : ");
+            int secondnumner = int.Parse(Console.ReadLine());
+
+            if (firstnumber > secondnumner)
+            {
+                Console.WriteLine("first number is grater :" + firstnumber);
+            }
+            else if (secondnumner > firstnumber)
+            {
+                Console.WriteLine("second number is grater :" + secondnumner);
+            }
+            else
+            {
+                Console.WriteLine("Bothe number is equal");
+            }
+        }
+///////////////////////////////////////////////////////////////////////////////
+///Number is even or odd
+        static void Main(string[] args)
+        {
+            Console.Write("enter the number : ");
+            int number = int.Parse(Console.ReadLine());
+
+            if (number % 2 == 0) 
+            {
+                Console.WriteLine("the number is even");
+            }
+            else
+            {
+                Console.WriteLine("the number is odd");
+            }
+        }
+/////////////////////////////////////////////////////////////////////////////// 
+///Prime Number 
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("enter the number : ");
+            int number = int.Parse(Console.ReadLine());
+
+            bool isPrime = IsPrime(number);
+
+            if (isPrime)
+            {
+                Console.WriteLine("the number is Prime");
+            }
+            else
+            {
+                Console.WriteLine("the number is not prime");
+            }
+        }
+        static bool IsPrime(int number)
+        {
+            if (number <= 1)
+            {
+                return false;
+            }
+            for (int i = 2; i <= Math.Sqrt(number); i++)
+            {
+                if (number % i == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+///////////////////////////////////////////////////////////////////////////////
+///Local or Global Variable
+using System;
+
+class Program
+{
+    static int globalVariable = 10;
+    static void Main(string[] args)
+    {
+        int localVariable = 5;
+        Console.WriteLine("Inside Main method:");
+        Console.WriteLine("Local variable: " + localVariable);
+        Console.WriteLine("Global variable: " + globalVariable);
+        UpdateVariables();
+        Console.WriteLine("\nAfter calling UpdateVariables method:");
+        Console.WriteLine("Local variable: " + localVariable); 
+        Console.WriteLine("Global variable: " + globalVariable); 
+    }
+    static void UpdateVariables()
+    {
+        int localVariable = 15;
+        globalVariable = 20;
+
+        Console.WriteLine("\nInside UpdateVariables method:");
+        Console.WriteLine("Local variable: " + localVariable);
+        Console.WriteLine("Global variable: " + globalVariable);
+    }
+}
