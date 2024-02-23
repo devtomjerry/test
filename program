@@ -124,3 +124,216 @@ class Program
         Console.WriteLine("Global variable: " + globalVariable);
     }
 }
+
+///////////////////////////////////////////////////////////////////////////////
+// Swapping two number
+namespace FirstProgram
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("enter first number : ");
+            int number1 = int.Parse(Console.ReadLine());
+
+            Console.Write("enter second number : ");
+            int number2 = int.Parse(Console.ReadLine());
+// Logic 1
+            int temp = 0;
+            temp = number1;
+            number1 = number2;
+            number2 = temp;
+//logic 2
+  //          number1 = number1 * number2;
+  //          number2 = number1 / number2;
+  //          number1 = number1 / number2;
+
+            System.Console.WriteLine($"Number after swapping :  number1 = { number1}  number2 = { number2 }");
+        }
+    }
+}
+///////////////////////////////////////////////////////////////////////////////
+//Palindrome number
+        static void Main(string[] args)
+        {
+            int n, r, sum = 0, temp;
+            Console.Write("Enter the Number: ");
+            n = int.Parse(Console.ReadLine());
+            temp = n;
+            while (n > 0)
+            {
+                r = n % 10;
+                sum = (sum * 10) + r;
+                n = n / 10;
+            }
+            if (temp == sum)
+                Console.Write("Number is Palindrome.");
+            else
+                Console.Write("Number is not Palindrome");
+        }
+///////////////////////////////////////////////////////////////////////////////
+// Reverse Number
+        static void Main(string[] args)
+        {
+            Console.Write("Enter the number : ");
+            int number = int.Parse(Console.ReadLine());
+            int reminder, revers = 0;
+
+    // if the number length is grater then 9 then use long 
+    //            long number = long.Parse(Console.ReadLine());
+    //            long reminder, revers = 0;
+
+            while (number > 0)
+            {
+                reminder = number % 10;
+
+                revers = (revers * 10) + reminder;
+                number = number / 10;
+            }
+            Console.WriteLine($"number after reverse reverse : {revers}");
+        }
+///////////////////////////////////////////////////////////////////////////////
+// Armstrong Number 
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("enter the number :");
+            int number = int.Parse(Console.ReadLine());
+
+            if (IsArmstrong (number))
+            {
+                Console.WriteLine($"number is armstrong {number}");
+            }
+            else 
+            {
+                Console.WriteLine($"{number} is not armstrong number ");
+            }
+            Console.ReadKey();
+        }
+        static bool IsArmstrong (int number)
+        {
+            int OrignalNumber = number;
+            int result =0;
+            int power = NumberOfDigits(number);
+
+            while (number > 0)
+            {
+                int digit = number % 10;
+                result += (int)Math.Pow(digit, power);
+                number /= 10;
+            }
+            return OrignalNumber == result;
+        }
+        static int NumberOfDigits(int number)
+        {
+            int count = 0;
+            while (number != 0) 
+            {
+                count++;
+                number /= 10;
+            }
+            return count;
+        }
+    }
+///////////////////////////////////////////////////////////////////////////////  
+//Factorial of The Number
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter the number : ");
+            int number = int.Parse(Console.ReadLine());
+            int factorial = 1;
+            for (int i = 1; i <= number; i++)
+            {
+                factorial = factorial * i;
+            }
+            Console.WriteLine($"Factorial of the {number} is : {factorial}");
+            Console.ReadLine();
+        }
+    }
+////////////////////////////////////////////////////////////////////////////
+// Sum Of the Digite
+    static void Main(string[] args)
+    {
+        Console.Write("Enter the number : ");
+        int number = int.Parse(Console.ReadLine());
+        int sum = 0, reminder;
+        while (number > 0)
+        {
+            reminder = number % 10;
+            sum += reminder;
+            number = number / 10;
+        }
+        Console.WriteLine($"Sum Of the Digite : {sum}");
+        Console.ReadLine();
+    }
+////////////////////////////////////////////////////////////////////////////
+// *                                                                                                                                     
+// **                                                                                                                                    
+// ***                                                                                                                                   
+// ****                                                                                                                                  
+// *****                                                                                                                       
+// ******
+// *******
+// ********    
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            for (int i = 1; i <= 8; ++i)
+            {
+                for (int j = 1; j <= i; ++j)
+                {
+                    Console.Write("*");
+                }
+
+                Console.WriteLine();
+            }
+            Console.ReadLine();
+        }
+    }
+////////////////////////////////////////////////////////////////////////////
+//Array List 
+        static void Main(string[] args)
+        {
+            ArrayList numbers = new ArrayList();
+
+            numbers.Add(10);
+            numbers.Add(20);
+            numbers.Add(30);
+            numbers.Add(40);
+
+            Console.WriteLine("Elements in the ArrayList:");
+            foreach (object obj in numbers)
+            {
+                int number = (int)obj;
+                Console.WriteLine(number);
+            }
+        }
+////////////////////////////////////////////////////////////////////////////
+//List and array list
+        static void Main(string[] args)
+        {
+            List<int> list = new List<int>();
+            list.Add(10);
+            list.Add(20);
+            list.Add(30);
+            Console.WriteLine("Elements in the List<int>:");
+            foreach (int num in list)
+            {
+                Console.WriteLine(num);
+            }
+            ArrayList arrayList = new ArrayList();
+            arrayList.Add(40);
+            arrayList.Add(50);
+            arrayList.Add(60);
+            Console.WriteLine("\nElements in the ArrayList:");
+            foreach (object obj in arrayList)
+            {
+                int num = (int)obj; 
+                Console.WriteLine(num);
+            }
+        }
+////////////////////////////////////////////////////////////////////////////
